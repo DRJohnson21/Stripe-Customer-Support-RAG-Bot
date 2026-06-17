@@ -22,7 +22,7 @@ git clone https://github.com/DRJohnson21/Stripe-Customer-Support-RAG-Bot
 Then move into the cloned repo folder:
 
 ```bash
-cd stripe-rag-chatbot
+cd Stripe-Customer-Support-RAG-Bot
 ```
 
 ## 3. Create a Virtual Environment
