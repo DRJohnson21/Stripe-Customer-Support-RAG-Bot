@@ -6,17 +6,17 @@ A locally-run AI chatbot built with Streamlit and Azure OpenAI that answers Stri
 
 ## What It Does
 
-- **RAG Pipeline** — 30 Stripe docs (Markdown + PDF) are chunked, embedded, and stored in an Azure vector store. Every user question retrieves the most relevant docs before generating an answer.
-- **Concise, actionable answers** — 2–4 sentence responses with exact steps, timelines, and next actions (e.g. "Go to Stripe Dashboard > Payments > Disputes").
-- **Clickable source citations** — Each answer links directly to the relevant Stripe documentation pages.
-- **Confidence-based escalation** — The model scores its confidence (HIGH / MEDIUM / LOW) internally. If LOW or MEDIUM, the user is shown Stripe's real support links:
+- **RAG Pipeline** - 30 Stripe docs (Markdown + PDF) are chunked, embedded, and stored in an Azure vector store. Every user question retrieves the most relevant docs before generating an answer.
+- **Concise, actionable answers** - 2–4 sentence responses with exact steps, timelines, and next actions (e.g. "Go to Stripe Dashboard > Payments > Disputes").
+- **Clickable source citations** - Each answer links directly to the relevant Stripe documentation pages.
+- **Confidence-based escalation** - The model scores its confidence (HIGH / MEDIUM / LOW) internally. If LOW or MEDIUM, the user is shown Stripe's real support links:
   - 💬 Live Chat & Email → https://support.stripe.com/contact
   - 📖 Stripe Help Center → https://support.stripe.com
   - 🏦 Stripe Dashboard Support → https://dashboard.stripe.com/support
-- **Empathetic tone** — Detects frustrated or distressed language ("still waiting", "it's been weeks", "unacceptable") and opens with: *"I'm really sorry to hear that, I understand how stressful this must be."*
-- **Gibberish detection** — If the input is random characters or unintelligible, responds with: *"I didn't quite understand that — could you please retype your question?"*
-- **Out-of-scope handling** — Refuses non-Stripe questions with: *"I'm Stripe's customer support bot, so I'm only able to help with Stripe-related questions. For this one, you'll likely find a great answer with a quick internet search!"*
-- **Stripe-branded UI** — White background, Stripe wordmark top-left, orange→pink→purple gradient, centered input on load.
+- **Empathetic tone** - Detects frustrated or distressed language ("still waiting", "it's been weeks", "unacceptable") and opens with: *"I'm really sorry to hear that, I understand how stressful this must be."*
+- **Gibberish detection** - If the input is random characters or unintelligible, responds with: *"I didn't quite understand that - could you please retype your question?"*
+- **Out-of-scope handling** - Refuses non-Stripe questions with: *"I'm Stripe's customer support bot, so I'm only able to help with Stripe-related questions. For this one, you'll likely find a great answer with a quick internet search!"*
+- **Stripe-branded UI** - White background, Stripe wordmark top-left, orange→pink→purple gradient, centered input on load.
 
 ---
 
@@ -95,7 +95,7 @@ This will:
 1. Upload all `.md` and `.pdf` files from your knowledge base folder to Azure
 2. Create a new vector store named `stripe-docs-index`
 3. Index all 30 files
-4. Print the vector store ID — add it to your `.env` as `AZURE_OPENAI_VECTOR_STORE_ID`
+4. Print the vector store ID - add it to your `.env` as `AZURE_OPENAI_VECTOR_STORE_ID`
 
 > You will need `gpt-4.1-mini` and `text-embedding-ada-002` deployed on your Azure OpenAI resource.
 
@@ -128,5 +128,5 @@ Ctrl + C
 ## Notes
 
 - The `.env` file must be in the same folder as `app.py`.
-- Do not commit `.env` — only `.env.template` belongs in the repo.
+- Do not commit `.env` - only `.env.template` belongs in the repo.
 - The `upload_knowledge_base.py` script only needs to be run once per Azure resource to set up the vector store.
