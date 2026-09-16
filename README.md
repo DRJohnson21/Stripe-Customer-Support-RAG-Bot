@@ -2,7 +2,7 @@
 
 A local Streamlit chatbot that answers Stripe customer-support questions using retrieval-augmented generation (RAG). Questions are answered by an Azure OpenAI model deployment that searches a vector store built from 30 Stripe documentation files.
 
-> This is an academic project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge_base/` are copies of Stripe's public documentation and remain Stripe's content.
+> This is an personal project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge-base/` are copies of Stripe's public documentation and remain Stripe's content.
 
 ## How it works
 
@@ -27,7 +27,7 @@ Model settings: `temperature=0.2`, `max_output_tokens=1500`.
 
 ## Knowledge base
 
-`knowledge_base/` contains 29 Markdown pages from Stripe's documentation and 1 PDF of Stripe's FAQ for customers of businesses using Stripe. Together they cover:
+`knowledge-base/` contains 29 Markdown pages from Stripe's documentation and 1 PDF of Stripe's FAQ for customers of businesses using Stripe. Together they cover:
 
 - billing and subscriptions
 - invoicing
@@ -43,7 +43,7 @@ Model settings: `temperature=0.2`, `max_output_tokens=1500`.
 .
 ├── app.py              # Streamlit UI, Azure OpenAI call, confidence/escalation/citation handling
 ├── system_prompt.py    # System prompt defining scope, style, confidence, and escalation rules
-├── knowledge_base/     # Source documents uploaded to the vector store
+├── knowledge-base/     # Source documents uploaded to the vector store
 ├── requirements.txt
 ├── .env.template
 └── .gitignore
@@ -90,7 +90,7 @@ You need all of the following:
 
 - An Azure OpenAI resource.
 - A model deployment.
-- A vector store containing the files in `knowledge_base/`. Upload those files to a vector store in your Azure OpenAI resource and copy its ID.
+- A vector store containing the files in `knowledge-base/`. Upload those files to a vector store in your Azure OpenAI resource and copy its ID.
 
 ### 5. Create the `.env` file
 
