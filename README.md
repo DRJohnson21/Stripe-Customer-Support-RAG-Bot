@@ -2,13 +2,13 @@
 
 A local Streamlit chatbot that answers Stripe customer-support questions using retrieval-augmented generation (RAG). Questions are answered by an Azure OpenAI model deployment that searches a vector store built from 30 Stripe documentation files.
 
-> This is an personal project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge-base` are copies of Stripe's public documentation and remain Stripe's content.
+> This is an personal project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge_base` are copies of Stripe's public documentation and remain Stripe's content.
 
 ## How it works
 
 1. The user asks a question in the Streamlit chat interface.
 2. `app.py` sends the full conversation, along with the system prompt in `system_prompt.py`, to the Azure OpenAI **Responses API** (`client.responses.create`).
-3. The request includes the `file_search` tool, pointed at an Azure OpenAI vector store that contains the files in `knowledge-base`. The model retrieves relevant passages and answers from them.
+3. The request includes the `file_search` tool, pointed at an Azure OpenAI vector store that contains the files in `knowledge_base`. The model retrieves relevant passages and answers from them.
 4. The app post-processes the response:
    - **Confidence rating.** The system prompt tells the model to end every answer with `CONFIDENCE: HIGH`, `MEDIUM`, or `LOW`. The app removes this tag from the displayed text and uses it to decide what to show.
    - **Escalation banner.** When confidence is `LOW` or `MEDIUM`, the app shows a banner linking to Stripe Support, the Stripe Help Center, and Stripe Dashboard support.
@@ -27,7 +27,7 @@ Model settings: `temperature=0.2`, `max_output_tokens=1500`.
 
 ## Knowledge base
 
-`knowledge-base` contains 29 Markdown pages from Stripe's documentation and 1 PDF of Stripe's FAQ for customers of businesses using Stripe. Together they cover:
+`knowledge_base` contains 29 Markdown pages from Stripe's documentation and 1 PDF of Stripe's FAQ for customers of businesses using Stripe. Together they cover:
 
 - billing and subscriptions
 - invoicing
@@ -43,7 +43,7 @@ Model settings: `temperature=0.2`, `max_output_tokens=1500`.
 .
 ├── app.py              # Streamlit UI, Azure OpenAI call, confidence/escalation/citation handling
 ├── system_prompt.py    # System prompt defining scope, style, confidence, and escalation rules
-├── knowledge-base/     # Source documents uploaded to the vector store
+├── knowledge_base     # Source documents uploaded to the vector store
 ├── requirements.txt
 ├── .env.template
 └── .gitignore
@@ -90,7 +90,7 @@ You need all of the following:
 
 - An Azure OpenAI resource.
 - A model deployment.
-- A vector store containing the files in `knowledge-base`. Upload those files to a vector store in your Azure OpenAI resource and copy its ID.
+- A vector store containing the files in `knowledge_base`. Upload those files to a vector store in your Azure OpenAI resource and copy its ID.
 
 ### 5. Create the `.env` file
 
