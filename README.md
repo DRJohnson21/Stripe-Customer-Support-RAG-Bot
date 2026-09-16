@@ -8,7 +8,7 @@ A local Streamlit chatbot that answers Stripe customer-support questions using r
 
 1. The user asks a question in the Streamlit chat interface.
 2. `app.py` sends the full conversation, along with the system prompt in `system_prompt.py`, to the Azure OpenAI **Responses API** (`client.responses.create`).
-3. The request includes the `file_search` tool, pointed at an Azure OpenAI vector store that contains the files in `knowledge_base/`. The model retrieves relevant passages and answers from them.
+3. The request includes the `file_search` tool, pointed at an Azure OpenAI vector store that contains the files in `knowledge-base`. The model retrieves relevant passages and answers from them.
 4. The app post-processes the response:
    - **Confidence rating.** The system prompt tells the model to end every answer with `CONFIDENCE: HIGH`, `MEDIUM`, or `LOW`. The app removes this tag from the displayed text and uses it to decide what to show.
    - **Escalation banner.** When confidence is `LOW` or `MEDIUM`, the app shows a banner linking to Stripe Support, the Stripe Help Center, and Stripe Dashboard support.
