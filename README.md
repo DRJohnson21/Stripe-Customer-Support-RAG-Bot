@@ -2,7 +2,7 @@
 
 A local Streamlit chatbot that answers Stripe customer-support questions using retrieval-augmented generation (RAG). Questions are answered by an Azure OpenAI model deployment that searches a vector store built from 30 Stripe documentation files.
 
-> This is an personal project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge_base` are copies of Stripe's public documentation and remain Stripe's content.
+> This is a personal project and is not affiliated with, endorsed by, or supported by Stripe. The files in `knowledge_base` are copies of Stripe's public documentation and remain Stripe's content.
 
 ## How it works
 
